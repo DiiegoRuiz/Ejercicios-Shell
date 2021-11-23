@@ -1,0 +1,25 @@
+nano 05-hola-con-ayuda.sh
+####################################################################
+#! /bin/bash
+
+cat << DESCRIPCION_AYUDA
+SYNOPSIS
+$0 NOMBRE_1 [NOMBRE_2] ... [NOMBRE_N]
+
+DESCRIPCION
+Muestra "hola NOMBRE_1, NOMBRE_2, ... NOMBRE_N!" por pantalla.
+
+CÓDIGOS DE RETORNO
+1 Sie el número de parámetros es menor que 1
+
+# si número de parámetros <= 0
+if test $# -le 0 ; then
+echo "hay que introducir al menos un parámetro."
+ayuda
+exit 1
+fi
+
+MENSAJE="Hola"
+######################################################################  
+chmod u+x 05-hola-con-ayuda.sh
+./05-hola-con-ayuda.sh
